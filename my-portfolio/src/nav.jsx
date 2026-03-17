@@ -11,11 +11,7 @@ function Navbar() {
           <a href='#awards'>Achievements</a>
           <a href='#volunteer'>Volunteer</a>
         </nav>
-        <a
-          className="btn small"
-          href={new URL("/cv.pdf", import.meta.env.BASE_URL).href}
-          download="cv.pdf"
-        >
+        <a className="btn small" href={`${import.meta.env.BASE_URL}cv.pdf`} download>
           <FaDownload aria-hidden="true" />
           Resume
         </a>
