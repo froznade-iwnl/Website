@@ -29,7 +29,7 @@ const ACADEMICS = [
     name: 'SDIT At-Taqwa Surabaya',
     note: '',
     logoUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmIQzUaMo64oTNw7If-E-sEt2hsU5gZwoFA5zBMbJq9kUdHM--Tv6YWKh5w4I7OUghX-znYrTikeX27dS-wtejMbNjrDsg&s&ec=121584914',
-    link: 'https://clementitownsec.moe.edu.sg/',
+    link: 'https://sditattaqwasby.sch.id/',
   },
 ]
 
