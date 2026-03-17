@@ -37,22 +37,27 @@ function AcademicTimeline() {
   return (
     <section className="academics" id="academics">
       <div className="container">
-        <div className="section-head">
+        {/* <div className="section-head">
           <h1 className="section-kicker">My Education</h1>
           <p className="eyebrow">Where I pursued my education</p>
-          {/* <h2 className="section-title">Where I pursue my education</h2> */}
-        </div>
+        </div> */}
 
         <div className="academics-track">
           {ACADEMICS.map((item) => (
-            <article key={item.id} className="academics-card">
-              <a className="academics-logo" href={item.link} target="_blank" rel="noreferrer">
+            <a
+              key={item.id}
+              className="academics-card"
+              href={item.link}
+              target="_blank"
+              rel="noreferrer"
+            >
+              <div className="academics-logo">
                 <img src={item.logoUrl} alt={`${item.name} logo`} />
-              </a>
+              </div>
               <span className="academics-years">{item.years}</span>
               <h3 className="academics-name">{item.name}</h3>
               {/* <p className="academics-note">{item.note}</p> */}
-            </article>
+            </a>
           ))}
         </div>
       </div>

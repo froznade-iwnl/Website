@@ -1,43 +1,50 @@
-import * as React from 'react'
+import * as React from "react";
 
 const PROJECTS = [
   {
-    id: 'apps',
-    title: 'HalalSG',
-    tag: 'iOS App',
-    description: 'An app to help people find nearby halal establishments in Singapore.',
-    link: 'View Application'
+    id: "apps",
+    title: "HalalSG",
+    tag: "iOS App",
+    description:
+      "An app to help people find nearby halal establishments in Singapore.",
+    link: "https://github.com/froznade-iwnl/halal-food-finder",
   },
   {
-    id: 'apps',
-    title: 'FLOW',
-    tag: 'App Playground',
-    description: 'Helping youths to track their mood and information regarding mental-health',
+    id: "apps",
+    title: "FLOW",
+    tag: "App Playground",
+    description:
+      "Helping youths to track their mood and information regarding mental-health",
+    link: "https://github.com/froznade-iwnl/flow-version-two",
   },
   {
-    id: 'apps',
-    title: 'Dear Diary',
-    tag: 'App Playground',
-    description: 'AI-powered diary that detects users emotion and a chatbot to respond to it',
+    id: "apps",
+    title: "Dear Diary",
+    tag: "App Playground",
+    description:
+      "AI-powered diary that detects users emotion and a chatbot to respond to it",
+    link: "https://github.com/froznade-iwnl/splashAwards",
   },
   {
-    id: 'apps',
-    title: 'Aksara Temple',
-    tag: 'App Playground',
-    description: 'Game to help students learn Java Script (No, not JS, Aksara Jawa).',
+    id: "apps",
+    title: "Aksara Temple",
+    tag: "App Playground",
+    description:
+      "Game to help students learn Java Script (No, not JS, Aksara Jawa).",
+    link: "https://github.com/froznade-iwnl/aksara_jawa",
   },
-]
+];
 
-const ALL_FILTER = 'all'
+const ALL_FILTER = "all";
 
 function ProjectsGrid() {
-  const [activeFilter, setActiveFilter] = React.useState(ALL_FILTER)
+  const [activeFilter, setActiveFilter] = React.useState(ALL_FILTER);
   const filteredProjects =
     activeFilter === ALL_FILTER
       ? PROJECTS
-      : PROJECTS.filter((project) => project.id === activeFilter)
+      : PROJECTS.filter((project) => project.id === activeFilter);
 
-  const filterOptions = [ALL_FILTER, ...PROJECTS.map((project) => project.id)]
+  const filterOptions = [ALL_FILTER, ...PROJECTS.map((project) => project.id)];
 
   return (
     <section className="projects" id="projects">
@@ -66,21 +73,36 @@ function ProjectsGrid() {
 
         <div className="projects-grid">
           {filteredProjects.map((item) => (
-            <article key={item.id} 
-            className={`project-card ${item.size === "wide" ? "project-wide" : ""}`}>
+            <article
+              key={item.id}
+              className={`project-card ${item.size === "wide" ? "project-wide" : ""}`}
+            >
               <div className="project-card__header">
                 <span className="project-tag">{item.tag}</span>
                 <span className="project-id">{item.id.toUpperCase()}</span>
               </div>
               <h3>{item.title}</h3>
               <p>{item.description}</p>
-              <a className="link" href>View Project</a>
+              <a className="link" href={item.link}>
+                View Project
+              </a>
             </article>
           ))}
         </div>
+
+        <div className="projects-cta">
+          <a
+            className="btn primary"
+            href="https://github.com/froznade-iwnl"
+            target="_blank"
+            rel="noreferrer"
+          >
+            See more
+          </a>
+        </div>
       </div>
     </section>
-  )
+  );
 }
 
-export default ProjectsGrid
+export default ProjectsGrid;
