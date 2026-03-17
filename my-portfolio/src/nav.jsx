@@ -1,3 +1,5 @@
+import { FaDownload } from "react-icons/fa"
+
 function Navbar() {
   return (
     <header className="navbar">
@@ -9,7 +11,14 @@ function Navbar() {
           <a href='#awards'>Achievements</a>
           <a href='#volunteer'>Volunteer</a>
         </nav>
-        <a className="btn small">Resume</a>
+        <a
+          className="btn small"
+          href={new URL("/cv.pdf", import.meta.env.BASE_URL).href}
+          download="cv.pdf"
+        >
+          <FaDownload aria-hidden="true" />
+          Resume
+        </a>
       </div>
     </header>
   )
